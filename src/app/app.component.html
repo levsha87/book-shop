@@ -1,1 +1,12 @@
-<app-book></app-book>
+<app-top-bar class="bar"></app-top-bar>
+<h1>All Books:</h1>
+<div class="allBooks">
+  <app-book
+    *ngFor="let b of books"
+    [book]="b"
+    class="bookComponent"
+    (onChooseBook)="addChooseBook($event)"
+  ></app-book>
+</div>
+<h1>Choose Books:</h1>
+<app-cart [chooseBooks]="chooseBooks"></app-cart>

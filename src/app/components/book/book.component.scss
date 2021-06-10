@@ -1,0 +1,18 @@
+.book {
+  width: 300px;
+  border: 1px solid black;
+  padding: 10px;
+  letter-spacing: 1.1px;
+
+  .btn {
+    width: 80%;
+    margin-left: 10%;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+
+}
+

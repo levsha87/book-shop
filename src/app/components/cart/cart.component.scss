@@ -1,0 +1,9 @@
+.cartComponent{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &__chooseBook {
+    padding: 20px 30px;
+  }
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BookModel, books } from "./models/book.model";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bookShop';
+  books: BookModel[] = books;
+  chooseBooks: BookModel[] = [];
+
+  addChooseBook(chooseBook: BookModel) {
+    this.chooseBooks.push(chooseBook);
+  }
 }

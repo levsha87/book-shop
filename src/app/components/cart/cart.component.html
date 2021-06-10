@@ -1,0 +1,14 @@
+<div class="cartComponent">
+  <app-book
+    *ngFor="let chooseBook of chooseBooks"
+    class="cartComponent__chooseBook"
+    [book]="chooseBook"
+    (click)="look(chooseBook)"
+  ></app-book>
+</div>
+
+<app-cart-item
+  *ngIf="chooseBook"
+  class="cartComponent__chooseOne"
+  [chooseBook]="chooseBook"
+></app-cart-item>
