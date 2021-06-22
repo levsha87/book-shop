@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-top-bar',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-bar.component.scss']
 })
 export class TopBarComponent implements OnInit {
+  @Input() title: string = '';
+  @ViewChild('appTitle', {static: true}) appTitleRef!: ElementRef;
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
+    this.appTitleRef.nativeElement.innerText = this.title;
   }
 
 }

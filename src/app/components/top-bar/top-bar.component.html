@@ -1,5 +1,16 @@
-<a [routerLink]="['/']">
-  <h1>Book Store</h1>
-</a>
+<div class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a [routerLink]="['/']" class="navbar-brand">
+        <h1 #appTitle></h1>
+      </a>
+    </div>
+    <div class="navbar-collapse">
+      <div class="nav navbar-nav navbar-right">
+        <a routerLink="/cart" class="button fancy-button"><i class="material-icons">shopping_cart</i>Checkout
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
-<a routerLink="/cart" class="button fancy-button"><i class="material-icons">shopping_cart</i>Checkout</a>

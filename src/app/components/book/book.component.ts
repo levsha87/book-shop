@@ -1,21 +1,23 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component,  Input} from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
-import { BookModel } from "../../models/book.model";
+
+import { Book } from "../../models/book.model";
 
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
-  styleUrls: ['./book.component.scss']
+  styleUrls: ['./book.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class BookComponent {
-  @Input() book!: BookModel;
-  @Output() onChooseBook = new EventEmitter<BookModel>();
+  @Input() book!: Book;
+  @Output() selectedBook = new EventEmitter<Book>();
 
   constructor() {
   }
-
-  onBuy(value: BookModel) {
-    this.onChooseBook.emit(value);
+  addSelectedBook(value: Book) {
+    console.log(value);
+    this.selectedBook.emit(value);
   }
 }

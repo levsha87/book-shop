@@ -1,11 +1,36 @@
-export interface BookModel {
+export interface Book {
+  name: string;
+  author: string;
+  description: string;
+  price: number;
+  category: FictionGenres | NonfictionGenres;
+  createDate: number;
+  isAvailable: boolean;
+  numberChosenBooks?: number;
+}
+
+/*export class  Book {
+  constructor(
+    public name: string,
+    public description: string,
+    public price: number,
+    public category: FictionGenres | NonfictionGenres,
+    public createDate: number,public isAvailable: boolean) {
+  }
+}*/
+
+/*export class  Book {
   name: string;
   description: string;
   price: number;
   category: FictionGenres | NonfictionGenres;
   createDate: number;
   isAvailable: boolean;
-}
+
+  constructor( params?: Partial<Book> ) {
+    Object.assign( this, params );
+  }
+}*/
 
 export enum NonfictionGenres {
   MemoirAutobiography = 'Memoir & Autobiography',
@@ -34,29 +59,3 @@ export enum FictionGenres {
   ChildrenFiction = 'Children’s Fiction'
 }
 
-export const books: Array<BookModel> = [
-  {
-    name: 'Time',
-    description: 'About journal',
-    price: 20,
-    category: NonfictionGenres.BusinessMoney,
-    createDate: 2018,
-    isAvailable: true
-  },
-  {
-    name: 'Buildings',
-    description: 'About architecture',
-    price: 10,
-    category: NonfictionGenres.BusinessMoney,
-    createDate: 2014,
-    isAvailable: true
-  },
-  {
-    name: 'Queen',
-    description: 'About English Queen',
-    price: 100,
-    category: NonfictionGenres.Motivational,
-    createDate: 2012,
-    isAvailable: false
-  },
-]

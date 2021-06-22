@@ -1,14 +1,20 @@
-<div class="cartComponent">
-  <app-book
-    *ngFor="let chooseBook of chooseBooks"
-    class="cartComponent__chooseBook"
-    [book]="chooseBook"
-    (click)="look(chooseBook)"
-  ></app-book>
+<div class="row" *ngIf="selectedBook">
+  <div class="col-md-2 no-padding mx-3  bg-info selectedBook" *ngFor="let selectedBook of selectedBooks"
+       (click)="showSelectedBook(selectedBook)">
+    <h2>{{ selectedBook.name }} <span>({{ selectedBook.createDate}})</span></h2>
+    <div class="btn">
+      <button (click)="minusNumberChosenBook(selectedBook)">-1</button>
+      <span> {{ selectedBook.numberChosenBooks }} </span>
+      <button (click)="addNumberChosenBook(selectedBook)">+1</button>
+      <button (click)="deleteSelectedBook(selectedBook)">del book</button>
+    </div>
+  </div>
 </div>
 
-<app-cart-item
-  *ngIf="chooseBook"
-  class="cartComponent__chooseOne"
-  [chooseBook]="chooseBook"
-></app-cart-item>
+
+<div class="row">
+  <div class="col-xs-12">
+    <hr>
+    <app-cart-item [selectedBook]="selectedBookCartItem"></app-cart-item>
+  </div>
+</div>

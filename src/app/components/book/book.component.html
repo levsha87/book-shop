@@ -1,11 +1,10 @@
-<div class="book">
+<div class="col-md-2">
   <ul><b>{{ book.name | uppercase }}</b>
-    <li>Description: <b>{{ book.description }}</b></li>
-    <li>Price: <b>{{ book.price | currency }}</b></li>
+    <li>Author: <b>{{ book.author }}</b></li>
     <li>Category: <b>{{ book.category }}</b></li>
     <li>Create Data: <b>{{ book.createDate }} year</b></li>
-    <li>Available for sale: <b>{{ book.isAvailable }}</b></li>
+    <li>Price: <b>{{ book.price | currency }}</b></li>
   </ul>
-  <button class="btn" [disabled]="!book.isAvailable" (click)="onBuy(book)">Buy
+  <button class="btn btn-primary" [disabled]="!book.isAvailable" (click)="addSelectedBook(book)">Buy
   </button>
 </div>

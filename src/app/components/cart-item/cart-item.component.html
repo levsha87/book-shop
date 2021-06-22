@@ -1,4 +1,8 @@
-<div class="chooseOne">
-  <h2>Description choose book</h2>
-  <app-book [book]="chooseBook"></app-book>
+<div class="row" *ngIf="selectedBook">
+  <div class="col-xs-12">
+    <h2>{{ selectedBook.name }}</h2>
+    <p>{{ selectedBook.description }}</p>
+    <p>{{ selectedBook.price*5 | currency }}</p>
+  </div>
 </div>
+
