@@ -8,6 +8,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BookListComponent } from './book-list/book-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BookComponent,
     CartComponent,
     CartItemComponent,
-    TopBarComponent
+    TopBarComponent,
+    BookListComponent
   ],
   imports: [
     BrowserModule,

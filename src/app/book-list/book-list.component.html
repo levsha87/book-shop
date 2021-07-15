@@ -1,0 +1,16 @@
+<app-top-bar [title]="title"></app-top-bar>
+<div class="row">
+  <div class="col-xs-12">
+    <app-book
+      *ngFor="let book of books"
+      [book]="book"
+      (selectedBook)="addSelectedBook($event)"
+    ></app-book>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <app-cart [selectedBook]="selectedBook"></app-cart>
+  </div>
+</div>
